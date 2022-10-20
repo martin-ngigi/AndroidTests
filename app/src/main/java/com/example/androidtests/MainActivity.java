@@ -2,8 +2,10 @@ package com.example.androidtests;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     // Textview to show the language
     // chosen by the user
     TextView preferred_language;
+
+    private Button espresso2Btn;
 
 
     // onClick is called whenever
@@ -46,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
         // initializing the textview
         preferred_language = findViewById(R.id.preferred_language);
+
+        espresso2Btn = findViewById(R.id.espresso2Btn);
+        espresso2Btn.setOnClickListener( e ->{
+            startActivity(new Intent(MainActivity.this, Espresso2Activity.class));
+        });
 
     }
 }
